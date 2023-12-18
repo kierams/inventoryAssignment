@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="549.0" prefWidth="1016.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignmentgui2.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Button mnemonicParsing="false" onAction="#close" text="Close" />
+   <Pane prefHeight="59.0" prefWidth="378.0" />
+   <Label text="Inventory System">
+      <font>
+         <Font size="29.0" />
+      </font>
+   </Label>
+
+    <Label fx:id="welcomeText" />
+   <AnchorPane prefHeight="362.0" prefWidth="634.0">
+      <children>
+         <Pane layoutX="25.0" prefHeight="194.0" prefWidth="562.0">
+            <children>
+               <Label fx:id="tltAddDescription" layoutX="15.0" layoutY="38.0" prefHeight="18.0" prefWidth="88.0" text="Description" />
+               <TextField fx:id="txtAddDescription" layoutX="80.0" layoutY="34.0" prefHeight="26.0" prefWidth="142.0" />
+               <TextField fx:id="txtAddQuantity" layoutX="80.0" layoutY="65.0" prefHeight="26.0" prefWidth="142.0" />
+               <TextField fx:id="txtAddPrice" layoutX="80.0" layoutY="98.0" prefHeight="26.0" prefWidth="142.0" />
+               <Label fx:id="tltAddQuantity" layoutX="15.0" layoutY="69.0" prefHeight="18.0" prefWidth="88.0" text="Quantity" textAlignment="RIGHT" />
+               <Label fx:id="tltAddprice" layoutX="14.0" layoutY="102.0" prefHeight="18.0" prefWidth="88.0" text="Price" />
+               <Label fx:id="tltAddItem" layoutX="113.0" layoutY="6.0" text="Add New Item" />
+                <Button layoutX="185.0" layoutY="124.0" onAction="#addRecord" text="Add" />
+               <Label fx:id="tltUpdateItem" layoutX="124.0" layoutY="167.0" text="Update Item" />
+            </children>
+         </Pane>
+         <Label fx:id="tltDeleteRecord" layoutX="149.0" layoutY="291.0" text="Delete Item" />
+         <Label fx:id="tltIdDelete" layoutX="41.0" layoutY="320.0" prefHeight="18.0" prefWidth="66.0" text="ID to Delete" />
+         <TextField fx:id="txtDeleteId" layoutX="106.0" layoutY="316.0" prefHeight="26.0" prefWidth="142.0" />
+         <Button layoutX="197.0" layoutY="342.0" mnemonicParsing="false" onAction="#itemDelete" text="Delete" />
+         <TextField fx:id="txtIdUpdate" layoutX="109.0" layoutY="199.0" prefHeight="26.0" prefWidth="142.0" />
+         <Label fx:id="tltIdUpdate" layoutX="34.0" layoutY="204.0" prefHeight="18.0" prefWidth="76.0" text="ID to Update" />
+         <Label fx:id="tltQuantityUpdate" layoutX="1.0" layoutY="234.0" prefHeight="18.0" prefWidth="107.0" text="Quantity to Update" />
+         <TextField fx:id="txtQuantityUpdate" layoutX="109.0" layoutY="231.0" prefHeight="26.0" prefWidth="142.0" />
+         <Button layoutX="195.0" layoutY="257.0" mnemonicParsing="false" onAction="#updateItem" text="Update" />
+         <TabPane layoutX="266.0" layoutY="-1.0" prefHeight="387.0" prefWidth="667.0" tabClosingPolicy="UNAVAILABLE">
+           <tabs>
+             <Tab text="Items">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <TableView fx:id="itemTable" prefHeight="362.0" prefWidth="491.0">
+                             <columns>
+                               <TableColumn fx:id="columnId" prefWidth="75.0" text="Item ID" />
+                               <TableColumn fx:id="columnDescription" prefWidth="75.0" text="Description" />
+                                 <TableColumn fx:id="columnPrice" prefWidth="75.0" text="Price" />
+                                 <TableColumn fx:id="columnQuantity" prefWidth="75.0" text="Quantity" />
+                                 <TableColumn fx:id="columnQuantitySold" prefWidth="107.199951171875" text="Quantity Sold" />
+                                 <TableColumn fx:id="columnTotal" text="Total" />
+                             </columns>
+                           </TableView>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+             <Tab text="Report">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <TableView fx:id="reportTable" layoutY="-2.0" prefHeight="362.0" prefWidth="667.0">
+                              <columns>
+                                 <TableColumn fx:id="columnDate" prefWidth="75.0" text="Date" />
+                                 <TableColumn fx:id="columnId1" prefWidth="75.0" text="Item ID" />
+                                 <TableColumn fx:id="columnDescription1" prefWidth="75.0" text="Description" />
+                                 <TableColumn fx:id="columnPrice1" prefWidth="75.0" text="Price" />
+                                 <TableColumn fx:id="columnQuantityRemaining1" prefWidth="124.79998779296875" text="Quantity Remaining" />
+                                 <TableColumn fx:id="columnQuantitySold1" prefWidth="89.59991455078125" text="Quantity Sold" />
+                                 <TableColumn fx:id="columnTotal1" minWidth="2.4000244140625" prefWidth="71.199951171875" text="Total" />
+                                 <TableColumn fx:id="columnReason" text="Reason" />
+                              </columns>
+                           </TableView>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+           </tabs>
+         </TabPane>
+      </children>
+   </AnchorPane>
+</VBox>
